@@ -1,0 +1,261 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9140,        253]
+NotebookOptionsPosition[      7612,        225]
+NotebookOutlinePosition[      7951,        240]
+CellTagsIndexPosition[      7908,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Examples/Use of Natural_Units.m", "Title",
+ CellChangeTimes->{{3.775460819801641*^9, 3.7754608250969*^9}, {
+  3.775460927233707*^9, 
+  3.775460934613953*^9}},ExpressionUUID->"0d58ab84-a13d-44d7-863d-\
+8eb1555874e7"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "./Natural_Units.m"}]}], "Input",
+ CellChangeTimes->{{3.77546050413944*^9, 3.7754605117709723`*^9}, {
+  3.775462563472826*^9, 3.775462585866016*^9}},
+ CellLabel->
+  "8/22/19 13:36:26 \
+In[3]:=",ExpressionUUID->"cd1c5319-c4c7-416a-8901-a7a00a458ac1"],
+
+Cell["\<\
+This package is supposed to simplify the use of natural units in Mathematica \
+while avoiding clutter.
+
+Let\[CloseCurlyQuote]s start with a simple example, the speed of light. In \
+natural units it is simple one, which we can transform in any unit we want.\
+\>", "Text",
+ CellChangeTimes->{{3.7754608695422773`*^9, 
+  3.7754610206556597`*^9}},ExpressionUUID->"d98f58d1-2816-4c0e-91f4-\
+5e027f14a2b5"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"c", ",", 
+   FractionBox["meter", "sec"]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"c", ",", 
+   FractionBox["km", "hr"]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"c", ",", 
+   FractionBox["LightYear", "yr"]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775461023025144*^9, 3.7754610868955584`*^9}},
+ CellLabel->
+  "8/22/19 13:12:44 \
+In[2]:=",ExpressionUUID->"a7cc9d63-2b4c-42ac-9af2-797e639d19dc"],
+
+Cell["We can find the value of the Planck constant.", "Text",
+ CellChangeTimes->{{3.775461490881653*^9, 
+  3.775461518181744*^9}},ExpressionUUID->"b542530a-694b-4e6e-8202-\
+7d63c955f212"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"hbar", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"h", " ", "=", 
+   RowBox[{"2", " ", "\[Pi]", " ", "hbar"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"h", ",", 
+   RowBox[{"Joule", " ", "sec"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775461501127356*^9, 3.77546154245265*^9}},
+ CellLabel->
+  "8/22/19 13:19:02 \
+In[18]:=",ExpressionUUID->"1a97d0f4-74b4-4656-a1e2-2d1154a568f8"],
+
+Cell["\<\
+You can easily compute e.g. kinetic energies without even thinking about \
+units. Afterwards, simply express the result in any unit of energy.\
+\>", "Text",
+ CellChangeTimes->{{3.7754612175628777`*^9, 3.775461235503035*^9}, {
+  3.7754624066427183`*^9, 
+  3.775462432323443*^9}},ExpressionUUID->"cc804910-e894-457b-b818-\
+1e3c590fa3e0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mass", "=", 
+   RowBox[{"5", "kg"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"speed", "=", 
+   RowBox[{"10", " ", 
+    RowBox[{"meter", " ", "/", " ", "sec"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", " ", "=", " ", 
+   RowBox[{
+    FractionBox["mass", "2"], 
+    SuperscriptBox["speed", "2"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"T", ",", "Joule"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"T", ",", "erg"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"T", ",", "cal"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{"T", ",", 
+   RowBox[{"atto", " ", "eV"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7754612393004313`*^9, 3.775461302165127*^9}},
+ CellLabel->
+  "8/22/19 13:15:04 \
+In[6]:=",ExpressionUUID->"9aa96ff1-0bdb-40c2-b57f-1e5187a89fc2"],
+
+Cell["Or the distance to the sun in meters, ly, or Earth radii.", "Text",
+ CellChangeTimes->{{3.7754613394610643`*^9, 3.775461349698641*^9}, {
+  3.775461383060656*^9, 
+  3.775461391130309*^9}},ExpressionUUID->"ec56db63-aaa3-4c8c-b476-\
+3b58cbd04975"],
+
+Cell[BoxData[{
+ RowBox[{"InUnits", "[", 
+  RowBox[{
+   RowBox[{"1", " ", "AU"}], ",", "meter"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{
+   RowBox[{"1", " ", "AU"}], ",", "LightYear"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"InUnits", "[", 
+  RowBox[{
+   RowBox[{"1", " ", "AU"}], ",", "r\[Earth]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775461351175372*^9, 3.775461374032708*^9}},
+ CellLabel->
+  "8/22/19 13:16:14 \
+In[13]:=",ExpressionUUID->"414ecee3-b825-4e0e-ae06-4d63f6aa2054"],
+
+Cell["Or the Higgs mass in gram", "Text",
+ CellChangeTimes->{{3.775461424968553*^9, 
+  3.775461428720337*^9}},ExpressionUUID->"c0f18fc1-a156-4d24-87c2-\
+dff4c3e627aa"],
+
+Cell[BoxData[
+ RowBox[{"InUnits", "[", 
+  RowBox[{"mHiggs", ",", "gram"}], "]"}]], "Input",
+ CellChangeTimes->{{3.775461430701388*^9, 3.7754614352425756`*^9}},
+ CellLabel->
+  "8/22/19 13:17:15 \
+In[17]:=",ExpressionUUID->"a6526604-e8ea-4893-ab55-460638242a08"],
+
+Cell["\<\
+This can also used in plots easily. We plot a Maxwell-Boltzmann distribution \
+for different units of speed.\
+\>", "Text",
+ CellChangeTimes->{{3.775461617874515*^9, 3.775461663038321*^9}, {
+  3.7754617194398518`*^9, 3.775461720429899*^9}, {3.775461755829561*^9, 
+  3.775461756849761*^9}, {3.775461822953644*^9, 3.775461831202167*^9}, {
+  3.775462289821039*^9, 
+  3.775462310281024*^9}},ExpressionUUID->"3ba0c01f-816d-49a7-8a66-\
+8f9557b52da0"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"v_", ",", "v0_"}], "]"}], ":=", 
+  RowBox[{
+   FractionBox["4", 
+    SqrtBox["\[Pi]"]], 
+   FractionBox[
+    SuperscriptBox["v", "2"], 
+    SuperscriptBox["v0", "3"]], 
+   RowBox[{"Exp", "[", 
+    FractionBox[
+     RowBox[{"-", 
+      SuperscriptBox["v", "2"]}], 
+     SuperscriptBox["v0", "2"]], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v0", "=", 
+   RowBox[{"100", 
+    RowBox[{"km", "/", "sec"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"vMax", " ", "=", 
+    RowBox[{"400", 
+     RowBox[{"km", "/", "sec"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"InUnits", "[", 
+        RowBox[{
+         RowBox[{"f", "[", 
+          RowBox[{
+           RowBox[{"v", " ", "unit"}], ",", "v0"}], "]"}], ",", 
+         FractionBox["1", "unit"]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"v", ",", "0", ",", 
+         RowBox[{"InUnits", "[", 
+          RowBox[{"vMax", ",", "unit"}], "]"}]}], "}"}], ",", 
+       RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"unit", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       FractionBox["meter", "sec"], ",", 
+       FractionBox["km", "sec"], ",", 
+       FractionBox["mile", "hr"]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.775462050591045*^9, 3.7754622702315483`*^9}, {
+   3.775462315999688*^9, 3.775462360307618*^9}, 
+   3.7754626127183332`*^9},ExpressionUUID->"d011cf6b-3c8e-4033-829c-\
+4dc255962ee5"]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{Automatic, 467}, {238, Automatic}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 221, 4, 98, "Title",ExpressionUUID->"0d58ab84-a13d-44d7-863d-8eb1555874e7"],
+Cell[804, 28, 406, 10, 63, "Input",ExpressionUUID->"cd1c5319-c4c7-416a-8901-a7a00a458ac1"],
+Cell[1213, 40, 410, 9, 104, "Text",ExpressionUUID->"d98f58d1-2816-4c0e-91f4-5e027f14a2b5"],
+Cell[1626, 51, 572, 15, 163, "Input",ExpressionUUID->"a7cc9d63-2b4c-42ac-9af2-797e639d19dc"],
+Cell[2201, 68, 187, 3, 35, "Text",ExpressionUUID->"b542530a-694b-4e6e-8202-7d63c955f212"],
+Cell[2391, 73, 476, 12, 84, "Input",ExpressionUUID->"1a97d0f4-74b4-4656-a1e2-2d1154a568f8"],
+Cell[2870, 87, 345, 7, 58, "Text",ExpressionUUID->"cc804910-e894-457b-b818-1e3c590fa3e0"],
+Cell[3218, 96, 923, 25, 183, "Input",ExpressionUUID->"9aa96ff1-0bdb-40c2-b57f-1e5187a89fc2"],
+Cell[4144, 123, 250, 4, 35, "Text",ExpressionUUID->"ec56db63-aaa3-4c8c-b476-3b58cbd04975"],
+Cell[4397, 129, 515, 13, 84, "Input",ExpressionUUID->"414ecee3-b825-4e0e-ae06-4d63f6aa2054"],
+Cell[4915, 144, 167, 3, 35, "Text",ExpressionUUID->"c0f18fc1-a156-4d24-87c2-dff4c3e627aa"],
+Cell[5085, 149, 260, 6, 41, "Input",ExpressionUUID->"a6526604-e8ea-4893-ab55-460638242a08"],
+Cell[5348, 157, 453, 9, 35, "Text",ExpressionUUID->"3ba0c01f-816d-49a7-8a66-8f9557b52da0"],
+Cell[5804, 168, 1792, 54, 300, "Input",ExpressionUUID->"d011cf6b-3c8e-4033-829c-4dc255962ee5"]
+}, Open  ]]
+}
+]
+*)
+
