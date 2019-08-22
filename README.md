@@ -3,6 +3,6 @@ A Mathematica package for [natural units](https://en.wikipedia.org/wiki/Natural_
 
 Natural units are defined by
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=%5Chbar%3Dc%3Dk_B%3D1&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\hbar=c=k_B=1" width="318" height="18" />
+<img src="https://user-images.githubusercontent.com/29034913/63512588-7cfc2e00-c4e4-11e9-9f28-7c1bd9f069b9.png" align="center" border="0" alt="\hbar=c=k_B=1" width="230" />
 
 For the electromagnetic units I use the Lorentz-Heaviside units. All dimensionful quantities are internally saved in powers of GeV. Examples can be found in the Mathematica notebook.
