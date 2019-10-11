@@ -3,15 +3,16 @@
 (* ::Input::Initialization:: *)
 BeginPackage["NaturalUnits`"]
 
-InUnits::usage="InUnits[n,unit] converts a number n in natural units into given unit.";
+InUnits::usage="InUnits[n,unit] converts a number n in natural units into a specified unit.";
+ReducedMass::usage="ReducedMass[m1,m2] computes the reduced mass of a two body problem.";
 
 
 (* ::Section::Initialization:: *)
-(*Natural Units*)
+(*(*Natural Units*)*)
 
 
 (* ::Subsection::Initialization:: *)
-(*SI-Prefixes*)
+(*(*SI-Prefixes*)*)
 
 
 yotta = 10^24;
@@ -37,7 +38,7 @@ yocto = 10^-24;
 
 
 (* ::Subsection::Initialization:: *)
-(*Units*)
+(*(*Units*)*)
 
 
 (* ::Text:: *)
@@ -225,7 +226,7 @@ mole = 6.02214076 10^23;
 
 
 (* ::Subsection::Initialization:: *)
-(*Physical Constants*)
+(*(*Physical Constants*)*)
 
 
 (* ::Text:: *)
@@ -287,7 +288,7 @@ QCDscale = 218 MeV;
 
 
 (* ::Subsection::Initialization:: *)
-(*Functions*)
+(*(*Functions*)*)
 
 
 Begin["`Private`"]
@@ -295,6 +296,7 @@ Begin["`Private`"]
 
 (* ::Input::Initialization:: *)
 InUnits[number_,units_]:=number/units
+ReducedMass[m1_m2 _]:=m1 m2 / (m1+m2)
 
 
 End[]
