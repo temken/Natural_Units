@@ -5,14 +5,15 @@ BeginPackage["NaturalUnits`"]
 
 InUnits::usage="InUnits[n,unit] converts a number n in natural units into a specified unit.";
 ReducedMass::usage="ReducedMass[m1,m2] computes the reduced mass of a two body problem.";
+LogSpace::usage="LogSpace[min,max,N] creates a list of N numbers logarithmically equidistant between min and max."
 
 
 (* ::Section::Initialization:: *)
-(*(*Natural Units*)*)
+(*(*(*(*(*(*(*Natural Units*)*)*)*)*)*)*)
 
 
 (* ::Subsection::Initialization:: *)
-(*(*SI-Prefixes*)*)
+(*(*(*(*(*(*(*SI-Prefixes*)*)*)*)*)*)*)
 
 
 yotta = 10^24;
@@ -38,7 +39,7 @@ yocto = 10^-24;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*Units*)*)
+(*(*(*(*(*(*(*Units*)*)*)*)*)*)*)
 
 
 (* ::Text:: *)
@@ -59,6 +60,7 @@ eV = 10^-9 GeV;
 keV = 10^-6 GeV;
 MeV = 10^-3 GeV;
 TeV = 10^3 GeV;
+PeV = 10^6 GeV;
 Joule = 1/(1.602176634 10^-10)GeV;
 erg = gram (cm/sec)^2;
 Rydberg = 13.605693009eV;
@@ -69,19 +71,19 @@ cal = 4.184 Joule;
 (*Mass*)
 
 
-gram = 5.617977528089887 10^23 GeV;
+gram = 5.60958884493318 10^23 GeV;
 kg = 10^3 gram;
-lbs = 0.453592kg;
-AMU = 0.9314940954;
+lbs = 0.453592 kg;
+AMU = 0.9314940954 GeV;
 m\[Earth] = 5.9724 10^24 kg;
-m\[Sun] = 1.98848 10^30  kg;
+m\[Sun] = 1.98848 10^30 kg;
 
 
 (* ::Text:: *)
 (*Length*)
 
 
-cm = 5.068 10^13 GeV^-1;
+cm = 5.067730214314311 10^13 GeV^-1;
 mm = 10^-1 cm;
 meter = 100 cm;
 km = 10^3 meter;
@@ -119,7 +121,7 @@ sec=299792458 meter;
 ms=10^-3 sec;
 \[Mu]s = 10^-6 sec;
 ns=10^-9 sec;
-min=60sec;
+minute=60sec;
 hr=3600 sec;
 day=24hr;
 week = 7 day;
@@ -226,7 +228,7 @@ mole = 6.02214076 10^23;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*Physical Constants*)*)
+(*(*(*(*(*(*(*Physical Constants*)*)*)*)*)*)*)
 
 
 (* ::Text:: *)
@@ -288,7 +290,7 @@ QCDscale = 218 MeV;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*Functions*)*)
+(*(*(*(*(*(*(*Functions*)*)*)*)*)*)*)
 
 
 Begin["`Private`"]
@@ -296,7 +298,8 @@ Begin["`Private`"]
 
 (* ::Input::Initialization:: *)
 InUnits[number_,units_]:=number/units
-ReducedMass[m1_m2 _]:=m1 m2 / (m1+m2)
+ReducedMass[m1_,m2_]:=m1 m2 / (m1+m2)
+LogSpace[a_,b_,n_]:= 10.0^Range[Log10[a],Log10[b],(Log10[b]-Log10[a])/(n-1)]
 
 
 End[]
