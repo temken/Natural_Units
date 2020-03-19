@@ -9,11 +9,11 @@ LogSpace::usage="LogSpace[min,max,N] creates a list of N numbers logarithmically
 
 
 (* ::Section::Initialization:: *)
-(*(*(*(*(*(*(*Natural Units*)*)*)*)*)*)*)
+(*(*(*(*(*(*(*(*(*Natural Units*)*)*)*)*)*)*)*)*)
 
 
 (* ::Subsection::Initialization:: *)
-(*(*(*(*(*(*(*SI-Prefixes*)*)*)*)*)*)*)
+(*(*(*(*(*(*(*(*(*SI-Prefixes*)*)*)*)*)*)*)*)*)
 
 
 yotta = 10^24;
@@ -39,7 +39,7 @@ yocto = 10^-24;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*(*(*(*(*(*Units*)*)*)*)*)*)*)
+(*(*(*(*(*(*(*(*(*Units*)*)*)*)*)*)*)*)*)
 
 
 (* ::Text:: *)
@@ -55,7 +55,7 @@ arcsec = arcmin / 60;
 
 
 GeV = 1;
-meV = 10^-3 GeV;
+meV = 10^-12 GeV;
 eV = 10^-9 GeV;
 keV = 10^-6 GeV;
 MeV = 10^-3 GeV;
@@ -73,6 +73,7 @@ cal = 4.184 Joule;
 
 gram = 5.60958884493318 10^23 GeV;
 kg = 10^3 gram;
+tonne = 1000 kg;
 lbs = 0.453592 kg;
 AMU = 0.9314940954 GeV;
 m\[Earth] = 5.9724 10^24 kg;
@@ -228,7 +229,7 @@ mole = 6.02214076 10^23;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*(*(*(*(*(*Physical Constants*)*)*)*)*)*)*)
+(*(*(*(*(*(*(*(*(*Physical Constants*)*)*)*)*)*)*)*)*)
 
 
 (* ::Text:: *)
@@ -245,7 +246,7 @@ mNucleon=0.932 GeV;
 
 
 mUpQuark = 2.3 MeV;
-mDownQuark = 4.8 MeV
+mDownQuark = 4.8 MeV;
 mCharmQuark = 1.275 GeV;
 mStrangeQuark = 95 MeV;
 mTopQuark = 173.210 GeV;
@@ -285,12 +286,12 @@ GFermi=1.1663787 10^-5 GeV^-2;
 (*Energy scales*)
 
 
-HiggsVEV = (Sqrt[2]GFermi)^-0.5
+HiggsVEV = (Sqrt[2]GFermi)^-0.5;
 QCDscale = 218 MeV;
 
 
 (* ::Subsection::Initialization:: *)
-(*(*(*(*(*(*(*Functions*)*)*)*)*)*)*)
+(*(*(*(*(*(*(*(*(*Functions*)*)*)*)*)*)*)*)*)
 
 
 Begin["`Private`"]
